@@ -11,7 +11,7 @@ export default function Home() {
       key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
       amount: res.data.amount,
       currency: res.data.currency,
-      name: 'Priyansh Rastogi',
+      name: process.env.NEXT_PUBLIC_ACCOUNT_NAME,
       order_id: res.data.id,
       redirect: true,
       callback_url: 'http://localhost:3000/success'

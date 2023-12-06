@@ -13,7 +13,7 @@ const handler = async (req, res) => {
     method: 'netbanking',
     bank_account: {
       account_number: process.env.ACCOUNT_NUMBER,
-      name: 'Priyansh Rastogi',
+      name: process.env.NEXT_PUBLIC_ACCOUNT_NAME,
       ifsc: process.env.IFSC,
     },
     notes: {
