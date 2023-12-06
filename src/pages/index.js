@@ -14,7 +14,7 @@ export default function Home() {
       name: process.env.NEXT_PUBLIC_ACCOUNT_NAME,
       order_id: res.data.id,
       redirect: true,
-      callback_url: 'http://localhost:3000/success'
+      callback_url: 'http://localhost:3000/api/payment'
     })
     rzp.open();
   }
