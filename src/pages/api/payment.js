@@ -12,15 +12,15 @@ const handler = async (req, res) => {
     const payment = await rzp.payments.fetch(req.body.razorpay_payment_id)
 
     if (payment.status === 'captured') {
-      res.redirect('/success', 301)
+      return res.redirect(307, '/success')
     } else {
-      res.redirect('/failed', 301)
+      return res.redirect(307, '/failed')
     }
   }
 
   const error = req.body['error[description]']
 
-  res.redirect(`/failed?error=${error}`, 301)
+  res.redirect(307, `/failed?error=${error}`)
 }
 
 export default handler;
